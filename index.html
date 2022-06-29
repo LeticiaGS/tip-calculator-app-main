@@ -27,8 +27,8 @@
       <div class="container">
         <div class="left-container">
           <div class="bill-content">
-            <div class="text-bill">
-              <p>Bill</p> <p></p>
+            <div class="text-alert">
+              <p>Bill</p> <p>Can't be zero</p>
             </div>
             <div class="input-content">
               <img src="/images/icon-dollar.svg" alt="icon icon-dollar">
@@ -38,17 +38,17 @@
           <div class="tip-content">
             <p>Select Tip %</p>
             <div class="tips">
-              <button>5%</button>
-              <button>10%</button>
-              <button>15%</button>
-              <button>25%</button>
-              <button>50%</button>
+              <button class="btn" value="5">5%</button>
+              <button class="btn" value="10">10%</button>
+              <button class="btn" value="15">15%</button>
+              <button class="btn" value="25">25%</button>
+              <button class="btn" value="50">50%</button>
               <input class="custom" placeholder="Custom" type="number"></input>
             </div>
           </div>
           <div class="division-content">
-            <div class="text-division">
-              <p>Number of People</p> <p></p>
+            <div class="text-alert">
+              <p>Number of People</p> <p>Can't be zero</p>
             </div>
             <div class="input-content">
               <img src="/images/icon-person.svg" alt="icon icon-dollar">
@@ -69,11 +69,11 @@
               </div>
             </div>
             <div class="col-b">
-              <p>$0.00</p>
-              <p>$0.00</p>
+              <p id="amount-tip">$0.00</p>
+              <p id="total">$0.00</p>
             </div>
           </div>
-          <button>RESET</button>
+          <button id="resetBtn">RESET</button>
         </div>
       </div>
     </section>
@@ -83,6 +83,6 @@
         Frontend Mentor </a
       >. Coded by <a href="#">Letícia Gomes</a>.
     </div>
-
+    <script src="main.js"></script>
   </body>
 </html>

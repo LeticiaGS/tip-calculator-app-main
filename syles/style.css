@@ -25,6 +25,15 @@ body {
   background: var(--light-grayish-cyan);
 }
 
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -51,14 +60,6 @@ input[type=number]:focus {
   outline: 0;
 }
 
-.attribution {
-  font-size: 1.1rem;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228deg, 45%, 44%);
-}
-
 .input-content {
   display: flex;
   position: relative;
@@ -78,6 +79,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2rem;
 }
 
 section {
@@ -86,6 +88,7 @@ section {
   justify-content: center;
   flex-direction: column;
   height: calc(100vh - 1.6rem);
+  margin-inline: 2rem;
 }
 section .container {
   display: flex;
@@ -100,6 +103,13 @@ section .container .left-container {
 }
 section .container .left-container p {
   color: var(--dark-grayish-cyan);
+}
+section .container .left-container .text-alert {
+  display: flex;
+  justify-content: space-between;
+}
+section .container .left-container .text-alert p:last-of-type {
+  display: none;
 }
 section .container .left-container .tip-content {
   width: 100%;
@@ -125,6 +135,10 @@ section .container .left-container .tip-content .tips button, section .container
   border-radius: 0.4rem;
   cursor: pointer;
 }
+section .container .left-container .tip-content .tips button.active, section .container .left-container .tip-content .tips input.active {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
 section .container .left-container .tip-content .tips button.custom, section .container .left-container .tip-content .tips input.custom {
   background: var(--very-light-grayish-cyan);
   color: var(--dark-grayish-cyan);
@@ -133,6 +147,15 @@ section .container .left-container .tip-content .tips button.custom:focus, secti
   box-shadow: 0 0 0 0;
   border: 0.3rem solid var(--strong-cyan);
   outline: 0;
+}
+section .container .left-container .division-content.alert .text-alert p:last-of-type, section .container .left-container .bill-content.alert .text-alert p:last-of-type {
+  display: block;
+  margin-left: 5rem;
+  font-size: 1rem;
+  color: red;
+}
+section .container .left-container .division-content.alert input, section .container .left-container .bill-content.alert input {
+  border: 0.2rem solid red;
 }
 section .container .right-container {
   max-width: 28rem;
@@ -159,6 +182,7 @@ section .container .right-container .total-content .col-a .total {
 }
 section .container .right-container .total-content .col-b {
   font-size: 3rem;
+  text-align: right;
   color: var(--strong-cyan);
 }
 section .container .right-container .total-content .col-b p:last-of-type {
@@ -174,16 +198,30 @@ section .container .right-container button {
   opacity: 0.5;
   padding-block: 1rem;
 }
+section .container .right-container button.active {
+  background: var(--strong-cyan);
+  filter: none;
+  opacity: 1;
+  color: var(--very-dark-cyan);
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 445px) {
+  .attribution {
+    font-size: 0.8rem;
+  }
+
   section {
-    height: 100%;
+    height: 100vh;
   }
   section .container {
-    margin-top: 2rem;
+    margin-top: 0;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 1rem 0 0;
   }
   section .container .right-container {
     margin-left: 0;

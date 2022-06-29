@@ -21,6 +21,13 @@ body
   font-size: 1.4rem
   background: var(--light-grayish-cyan)
 
+.attribution
+  font-size: 1.1rem
+  text-align: center
+  margin-top: 2rem
+  & a
+    color: hsl(228, 45%, 44%)
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button
   -webkit-appearance: none
@@ -46,12 +53,6 @@ input[type=number]
     border: 0.3rem solid var(--strong-cyan)
     outline: 0
 
-.attribution
-  font-size: 1.1rem
-  text-align: center
-  & a
-    color: hsl(228, 45%, 44%)
-
 .input-content
   display: flex
   position: relative
@@ -70,12 +71,15 @@ header
   align-items: center
   justify-content: center
 
+  margin: 2rem
+
 section
   display: flex
   align-items: center
   justify-content: center
   flex-direction: column
   height: calc( 100vh - 1.6rem )
+  margin-inline: 2rem
 
   .container
     display: flex
@@ -90,6 +94,13 @@ section
 
       p
         color: var(--dark-grayish-cyan)
+
+      .text-alert
+        display: flex
+        justify-content: space-between
+         
+        p:last-of-type 
+          display: none
 
       .tip-content
         width: 100%
@@ -117,6 +128,10 @@ section
 
             cursor: pointer
 
+            &.active
+              background: var(--strong-cyan)
+              color: var(--very-dark-cyan)
+
             &.custom
               background: var(--very-light-grayish-cyan)
               color: var(--dark-grayish-cyan)
@@ -125,6 +140,16 @@ section
                 box-shadow: 0 0 0 0
                 border: 0.3rem solid var(--strong-cyan)
                 outline: 0
+
+      .division-content.alert, .bill-content.alert
+          .text-alert
+            p:last-of-type 
+              display: block
+              margin-left: 5rem
+              font-size: 1rem
+              color: red
+          input
+            border: 0.2rem solid red
 
     .right-container
       max-width: 28rem
@@ -152,6 +177,7 @@ section
 
         .col-b
           font-size: 3rem
+          text-align: right
           color: var(--strong-cyan)
 
           p:last-of-type
@@ -168,15 +194,30 @@ section
 
         padding-block: 1rem
 
+        &.active
+          background: var(--strong-cyan)
+          filter: none
+          opacity: 1
+          color: var(--very-dark-cyan)
+          cursor: pointer
+
+
 
 @media only screen and (max-width: 445px)
+
+  .attribution
+    font-size: 0.8rem
+  
   section
-    height: 100%
+    height: 100vh
     .container
-      margin-top: 2rem
+      margin-top: 0
       flex-direction: column
       align-items: center
-      justify-content: center
+      justify-content: flex-start
+      width: 100%
+      height: 100%
+      border-radius: 1rem 1rem 0 0
       
 
       .right-container
