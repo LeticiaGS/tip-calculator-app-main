@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-size: 1.4rem;
+  background: var(--light-grayish-cyan);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  text-align: right;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  height: 3.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: none;
+  background: var(--very-light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+input[type=number]:focus {
+  box-shadow: 0 0 0 0;
+  border: 0.3rem solid var(--strong-cyan);
+  outline: 0;
+}
+
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+.input-content {
+  display: flex;
+  position: relative;
+}
+.input-content img {
+  width: 1rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 1.2rem;
+}
+
+::-webkit-input-placeholder {
+  color: var(--grayish-cyan);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 1.6rem);
+}
+section .container {
+  display: flex;
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-top: 6rem;
+  padding-block: 2.5rem;
+}
+section .container .left-container {
+  max-width: 28rem;
+}
+section .container .left-container p {
+  color: var(--dark-grayish-cyan);
+}
+section .container .left-container .tip-content {
+  width: 100%;
+  margin-block: 2rem;
+}
+section .container .left-container .tip-content .tips {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-block: 1rem;
+}
+section .container .left-container .tip-content .tips button, section .container .left-container .tip-content .tips input {
+  width: 9rem;
+  padding-block: 0.8rem;
+  margin-block: 0.5rem;
+  margin-left: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--very-dark-cyan);
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+section .container .left-container .tip-content .tips button.custom, section .container .left-container .tip-content .tips input.custom {
+  background: var(--very-light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+}
+section .container .left-container .tip-content .tips button.custom:focus, section .container .left-container .tip-content .tips input.custom:focus {
+  box-shadow: 0 0 0 0;
+  border: 0.3rem solid var(--strong-cyan);
+  outline: 0;
+}
+section .container .right-container {
+  max-width: 28rem;
+  padding-block: 2rem;
+  background: var(--very-dark-cyan);
+  border-radius: 0.8rem;
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  color: var(--white);
+}
+section .container .right-container .total-content {
+  display: flex;
+  justify-content: space-between;
+  width: 22rem;
+}
+section .container .right-container .total-content span {
+  color: var(--grayish-cyan);
+}
+section .container .right-container .total-content .col-a .total {
+  margin-top: 4rem;
+}
+section .container .right-container .total-content .col-b {
+  font-size: 3rem;
+  color: var(--strong-cyan);
+}
+section .container .right-container .total-content .col-b p:last-of-type {
+  margin-top: 4rem;
+}
+section .container .right-container button {
+  background: var(--very-dark-cyan);
+  filter: brightness(1.3);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: var(--dark-grayish-cyan);
+  opacity: 0.5;
+  padding-block: 1rem;
+}
+
+@media only screen and (max-width: 445px) {
+  section {
+    height: 100%;
+  }
+  section .container {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  section .container .right-container {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
